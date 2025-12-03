@@ -1,0 +1,1094 @@
+/* ========== General Container ========== */
+.app-container {
+width: 100%;
+max-width: 100%;
+ margin: 0;
+padding: 20px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ---------- App layout & header ---------- */
+.app-layout {
+  min-height: 100vh;
+  background: #f6f8f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Topbar (header) */
+.topbar {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* LEFT: menu + logo */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* CENTER placeholder (takes all free space) */
+.topbar-center {
+  flex: 1;
+}
+
+/* RIGHT: nav + employee count */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* NAV */
+.topnav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #234;
+  font-weight: 600;
+  transition: 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  background: #f3f7f3;
+  color: #111;
+  border-color: #e6f0e6;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.brand {
+  font-size: 20px;
+  margin: 0;
+  color: #1f2937;
+}
+
+
+.employee-count {
+  background: #e8f5e9;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* main area wrapper to center content and keep width */
+.main-area {
+  width: 100%;
+  max-width: 100%;  /* Remove the limitation */
+  margin: 0;        /* Remove centering */
+  padding: 24px;    /* Give natural spacing */
+  box-sizing: border-box;
+}
+
+@media(min-width: 768px) {
+  .sidebar.open + .main-area {
+    margin-left: 240px;  /* Works properly for sidebar */
+  }
+}
+
+
+/* page card (used by pages to wrap content) */
+.page-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  margin-bottom: 20px;
+}
+
+.page-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Home small cards layout */
+.home-cards {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.home-card {
+  flex: 1;
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+/* Dashboard stat grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+  text-align: left;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1b5e20;
+  margin-top: 6px;
+}
+
+/* small link style used in Home */
+.link-inline {
+  color: #1b5e20;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-inline:hover {
+  text-decoration: underline;
+}
+
+
+/* ========== Add Employee Form ========== */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+form h2 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+form input {
+  width: 97%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+form button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+/* Search bar */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  padding: 10px 15px;
+  width: 280px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+/* ========== Employee List Table ========== */
+.employee-list-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.employee-list-container h2 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.employee-table th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
+}
+
+.employee-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.employee-table tr:hover {
+  background-color: #e0f7fa;
+}
+
+/* ===== Pagination Styling ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.page-btn,
+.page-number {
+  padding: 8px 14px;
+  background-color: #e8f5e9;
+  border: 1px solid #4caf50;
+  color: #2e7d32;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.page-btn:hover,
+.page-number:hover {
+  background-color: #c8e6c9;
+}
+
+.page-number.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #388e3c;
+  font-weight: bold;
+}
+
+.page-btn:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+  color: #aaa;
+}
+
+
+/* ========== Buttons in Table ========== */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+.cancel-btn {
+  background-color: #ff9800;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #fb8c00;
+}
+
+/* ========== Edit Inputs Styling ========== */
+.edit-input {
+  width: 100%;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* ========== No Data Message ========== */
+.no-data {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* ========== Toast Notifications Spacing ========== */
+.Toastify__toast-container {
+  font-size: 14px;
+}
+
+
+/* ---------- Sidebar styling ---------- */
+/* ---------- Sidebar styling ---------- */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: #1b5e20;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+  transform: translateX(-260px); /* Hidden by default */
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* Slide in when open */
+}
+
+.sidebar-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Sidebar links for main app navigation only:
+   Dashboard, Employees, Add Employee, Reports, Settings */
+.sidebar-link {
+  color: #c8e6c9;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.sidebar-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.sidebar-link.active {
+  background: #4caf50;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Overlay for small screens */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 90;
+}
+
+.sidebar-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Push main content slightly when sidebar open on larger screens */
+@media(min-width: 768px) {
+  .main-area {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+  }
+
+  .sidebar.open + .main-area {
+    margin-left: 240px;
+  }
+}
+
+/* For mobile, sidebar overlays content */
+@media(max-width: 767px) {
+  .main-area.blurred {
+    filter: blur(2px);
+    pointer-events: none;
+  }
+}
+
+/* Optional button style (for download/export etc) */
+.btn-download {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-download:hover {
+  background-color: #43a047;
+}
+
+
+/* SETTINGS
+
+/* Settings Page Improvements */
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-section {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.settings-section h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1b5e20;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-row label {
+  min-width: 180px;
+  font-weight: 600;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"],
+.form-row select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #2f6f2f;
+  box-shadow: 0 2px 6px rgba(47, 111, 47, 0.2);
+  outline: none;
+}
+
+.toggle-row input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.avatar-preview {
+  margin-top: 8px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.btn-save {
+  background: #1b5e20;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(47, 111, 47, 0.2);
+}
+
+
+/* ABOUT
+
+/* About Page */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-section {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.about-section h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1b5e20;
+}
+
+.tech-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tech-card {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.author-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.author-links a {
+  text-decoration: none;
+  color: #1b5e20;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.author-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* ----- HELP PAGE 
+
+/* ---------- Help / FAQ styling ---------- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  background: #e8f5e9;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #d0efd0;
+}
+
+.faq-answer {
+  padding: 12px 16px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Links inside FAQ */
+.faq-answer .link-inline {
+  color: #1b5e20;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.contact-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-field,
+.textarea-field {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 4px rgba(26, 115, 232, 0.3);
+}
+
+.btn-primary {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  width: max-content;
+}
+
+.btn-primary:hover {
+  background: #1557b0;
+}
+
+
+/* ---- HOMEPAGE
+/* ---------- Home Page Styling ---------- */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Banner */
+.home-banner {
+  background: #e8f5e9;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.home-banner h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: #1b5e20;
+}
+
+.home-banner p {
+  margin: 0;
+  color: #333;
+}
+
+/* Quick Action Cards */
+/* ---------- Quick Action Cards Improved Hover ---------- */
+
+.home-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.action-card {
+  background: #1b5e20; /* Dark green base */
+  color: #fff; /* White text */
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease;
+  text-align: center;
+}
+
+.action-card:hover {
+  background: #357a38; /* Slightly lighter, harmonious green */
+  color: #ffffff; /* Keep text white */
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Feature Highlights */
+.home-features {
+  background: #f1f8e9;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.home-features h3 {
+  margin-top: 0;
+  color: #1b5e20;
+}
+
+.home-features ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.home-features li {
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Quick Stats Snapshot */
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.home-stats .stat-card {
+  background: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.home-stats .stat-card h4 {
+  margin: 0 0 8px 0;
+  color: #1b5e20;
+}
+
+.home-stats .stat-card p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+
+/* ---------- Dashboard & Charts styling ---------- */
+
+/* Dashboard grid */
+.dashboard-grid {
+  display: grid;
+  gap: 16px;
+}
+
+/* Stat & chart cards */
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card hover effect */
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Stat card titles */
+.stat-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Stat values */
+.stat-card .stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+/* Department list in stats */
+.stat-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.stat-card ul li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* Custom design
+
+/* ================= Hover Animations ================= */
+
+/* Buttons */
+button, .btn, .link-inline {
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover, .link-inline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Cards */
+.page-card, .faq-item, .card {
+  transition: all 0.3s ease;
+}
+
+.page-card:hover, .faq-item:hover, .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Charts container inside cards */
+.stat-card canvas {
+  margin-top: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/*sidebar
+
+/* ================= Active Sidebar Item with Hover Animation ================= */
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  color: #f3f0f0;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* smooth animation */
+}
+
+/* Hover effect: slight lift + light green background */
+.sidebar-link:hover {
+  background-color: #d4e8d4; /* light green hover */
+  color: #2f6f2f;           /* dark green text on hover */
+  transform: translateY(-2px); /* lift up slightly */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Active effect: dark green + shadow + subtle lift */
+.sidebar-link.active {
+  background-color: #2f6f2f; /* dark green active */
+  color: white;
+  font-weight: 600;
+  transform: translateY(-2px); /* subtle lift */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ========== Responsive Design ========== */
+/* ================= Mobile Responsiveness ================= */
+
+/* Small screens: 768px and below */
+@media (max-width: 768px) {
+  /* Sidebar overlays instead of fixed side */
+  .sidebar {
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    left: -250px; /* hidden by default */
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0; /* slide in when open */
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 900;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-overlay.visible {
+    opacity: 1;
+  }
+
+  /* Topbar layout adjustment */
+  .topbar-left h1.brand {
+    font-size: 1.2rem;
+  }
+
+  .topnav {
+    display: none; /* hide top nav links on small screens */
+  }
+
+  /* Main area padding */
+  .main-area {
+    padding: 15px 10px;
+  }
+
+  /* Dashboard grid responsive */
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+  }
+
+  /* Page card adjustments */
+  .page-card {
+    padding: 15px;
+  }
+
+  /* Buttons full width */
+  .btn-download {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Extra small screens: 480px and below */
+@media (max-width: 480px) {
+  .topbar-left h1.brand {
+    font-size: 1rem;
+  }
+
+  .employee-count {
+    font-size: 0.9rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.2rem;
+  }
+}
