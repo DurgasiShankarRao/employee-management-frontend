@@ -1,13 +1,13 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://127.0.0.1:5000", // backend server URL
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 // Get all employees
 export const getEmployees = async () => {
   const res = await API.get("/api/employees");
-  return res.data;  // ✔ return ONLY the array
+  return res.data;
 };
 
 // Get employee by ID
