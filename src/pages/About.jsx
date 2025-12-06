@@ -58,7 +58,7 @@ export default function About() {
         <p>Durgasi Sankar Rao – Full Stack Developer / ECE Student</p>
         <div className="author-links">
           <a href="https://github.com/DurgasiShankarRao" target="_blank"><FaGithub /> GitHub</a>
-          <a href="https://www.linkedin.com/in/durgasishankarrao/" target="_blank"><FaLinkedin /> LinkedIn</a>
+          <a href="https://www.linkedin.com/in/durgasi-sankar-rao-03a270300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><FaLinkedin /> LinkedIn</a>
         </div>
       </section>
 
